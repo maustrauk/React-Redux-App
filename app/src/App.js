@@ -8,14 +8,15 @@ import MarsPhoto from './components/MarsPhoto';
 const App = props => {
   return (
     <div className="App">
-      <MarsPhoto load={props.getQuote} />
+      <MarsPhoto load={props.getQuote} data={props.data} />
     </div>
   );
 }
 
 const mapStateToProps = state => {
   return {
-    isFetching: state.isFetching
+    isFetching: state.isFetching,
+    data: state.API_Data
   };
 };
 

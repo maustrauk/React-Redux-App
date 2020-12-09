@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 const MarsPhoto = props => {
-    props.load();
+    useEffect(() => {
+        props.load();
+    }, [])
     return (<div className="mars-photo">
     </div>)
 }
