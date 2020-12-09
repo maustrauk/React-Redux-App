@@ -1,7 +1,7 @@
 import {FETCHING_QUOTE_START,FETCHING_QUOTE_SUCCESS,FETCHING_QUOTE_FAIL} from './../actions/marsActions';
 
 export const initState = {
-    API_Data: {},
+    photos: [],
     error: "",
     isFetching: false
 }
@@ -17,13 +17,14 @@ export const marsReducer = (state = initState, action) => {
         case(FETCHING_QUOTE_SUCCESS):
         return({
             ...state,
-            API_Data: action.payload,
+            photos: action.payload,
             isFetching: false
         });
         case(FETCHING_QUOTE_FAIL):
         return({
             ...state,
-            error: action.payload
+            error: action.payload,
+            isFetching: false
         })
         default:
             return state;

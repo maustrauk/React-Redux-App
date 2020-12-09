@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 
 import {getQuote} from './actions/marsActions';
 
-import MarsPhoto from './components/MarsPhoto';
+import MarsPhotos from './components/MarsPhotos';
 
 const App = props => {
   return (
     <div className="App">
-      <MarsPhoto load={props.getQuote} data={props.data} />
+      <MarsPhotos load={props.getQuote} data={props.data} />
     </div>
   );
 }
@@ -16,7 +16,7 @@ const App = props => {
 const mapStateToProps = state => {
   return {
     isFetching: state.isFetching,
-    data: state.API_Data
+    data: state.photos
   };
 };
 

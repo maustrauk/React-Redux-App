@@ -1,13 +1,9 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 
 const MarsPhoto = props => {
-    useEffect(() => {
-        props.load();
-    }, []);
-
-    const photos = props.data.photos;
-    return (<div className="mars-photo">
-        <p>Number of photos: {photos.length}</p>
+    const {photo} = props;
+    return (<div>
+        <img src={photo.img_src} alt={photo.earth_date} />
     </div>)
 }
 

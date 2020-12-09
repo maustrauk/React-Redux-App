@@ -14,7 +14,7 @@ export const getQuote = () => {
         axios
             .get(`${CURIOSITY_PHOTOS}api_key=${API_KEY}&sol=1000`)
             .then(res=> {
-                dispatch({type:FETCHING_QUOTE_SUCCESS, payload:res.data});
+                dispatch({type:FETCHING_QUOTE_SUCCESS, payload:res.data.photos});
             })
             .catch(err => {
                 dispatch({type:FETCHING_QUOTE_FAIL, payload: err});
